@@ -1,0 +1,8 @@
+body {
+    background-color: black;
+    color: white;
+}
+
+.quadrado {
+    background-image: url("images/lam_branca.jpg");
+}
