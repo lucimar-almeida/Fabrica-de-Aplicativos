@@ -1,0 +1,24 @@
+.horizontal {
+    height: 100px;
+    background: linear-gradient(red, blue, green);
+}
+
+.vertical {
+    height: 100px;
+    background: linear-gradient(90deg, red, blue 25%, green);
+}
+
+.cruzado {
+    height: 100px;
+    background: linear-gradient(to bottom right, red, blue, green);
+}
+
+.duplo {
+    height: 100px;
+    background: linear-gradient(to right, red, 20%, green);
+}
+
+to left = para a esquerda
+to right = para a direita
+to top = para cima
+to bottom = para baixo
