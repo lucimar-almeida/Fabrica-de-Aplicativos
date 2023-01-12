@@ -1,0 +1,21 @@
+body {
+      background-color: black;
+      color: white;
+}
+
+#image {
+      
+      width: 50%;
+}
+
+.blue {
+      width: 400px;
+      height: 400px;
+      background-color: blue;
+}
+
+.green {
+      width: 50vw;
+      height: 50vh;
+      background-color: green;
+}
