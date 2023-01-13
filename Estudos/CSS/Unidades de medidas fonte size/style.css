@@ -1,0 +1,28 @@
+body {
+      background-color: black;
+      color: white;
+}
+
+.container {
+      
+
+}
+
+.primeiro {
+      font-size: 2em;
+
+}
+
+.segundo {
+      font-size: 2rem;
+
+}
+
+.terceiro {
+      font-size: 2em;
+
+}
+
+html {
+      font-size: 20px;
+}
