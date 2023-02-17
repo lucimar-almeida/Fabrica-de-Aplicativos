@@ -1,57 +1,61 @@
 
 
+let listElement = document.querySelector("#app ul")
 let inputElement = document.querySelector("#app input")
 let buttonElement = document.querySelector("#app button")
-let listaElement = document.querySelector("#app ul")
 
 let tarefas = []
 
 function renderTarefas(){
 
-      listaElement.innerHTML = ""
+      listElement.innerHTML = ""
 
-      tarefas.map((todo)=>{
+      let posicao = tarefas.map((todo)=>{
+
             let liElement = document.createElement("li")
-            let tarefaText = document.createTextNode(todo)
+            let liText = document.createTextNode(todo)
 
             let linkElement = document.createElement("a")
             linkElement.setAttribute("href", "#")
-
             let linkText = document.createTextNode("Excluir")
             linkElement.appendChild(linkText)
-
-            liElement.appendChild(tarefaText)
+           
+            liElement.appendChild(liText)
             liElement.appendChild(linkElement)
-            listaElement.appendChild(liElement)
-
-            linkElement.onclick = deleteElement
+            listElement.appendChild(liElement)
 
             let posicao = tarefas.indexOf(todo)
 
-            linkElement.setAttribute("onclick", `deletarTarefa(${posicao})`)
+            linkElement.setAttribute("onclick", `excluirTarefa(${posicao})`)
 
       })
 
 }
 
-function adicionarTarefa(){
-      if(inputElement.value === ""){
-            alert("Digite uma tarefa!")
-            return false
-      }else{
+function adicionarTarefas(){
+    if(inputElement.value === ''){
+      alert("Digite uma tarefa!")
+      return false
+    }else{
 
-            let novaTarefa = inputElement.value
+      let novaTarefa = inputElement.value
 
-            tarefas.push(novaTarefa)
-            inputElement.value = ""
-            renderTarefas()
+      tarefas.push(novaTarefa)
 
-      }
+      inputElement.value = ""
+
+      renderTarefas()
+
+
+    }
+      
 }
 
-buttonElement.onclick = adicionarTarefa
+buttonElement.onclick = adicionarTarefas
 
-function deletarTarefa(posicao){
+
+
+function excluirTarefa(posicao){
       tarefas.splice(posicao, 1)
       renderTarefas()
 }
