@@ -4,59 +4,63 @@ let listElement = document.querySelector("#app ul")
 let buttonElement = document.querySelector("#app button")
 let inputElement = document.querySelector("#app input")
 
-let tarefas = []
+let tarefas = JSON.parse(localStorage.getItem("@tarefas")) || []
+
+function salvarTarefas(){
+
+      localStorage.setItem("@tarefas", JSON.stringify(tarefas))
+
+}
+
+renderTarefas()
+
+function deletarTarefas(posicao){
+      tarefas.splice(posicao, 1)
+      renderTarefas()
+      salvarTarefas()
+}
+
 
 function renderTarefas(){
 
       listElement.innerHTML = ""
-
+      
       tarefas.map((todo)=>{
 
-            let liElement = document.createElement("li")
-            let liText = document.createTextNode(todo)
+      let posicao = tarefas.indexOf(todo)
 
-            let linkElement = document.createElement("button")
+      let liElement = document.createElement("li")
+      let textLi = document.createTextNode(todo)
 
-            let linktext = document.createTextNode("Excluir")
-            linkElement.appendChild(linktext)
-            
+      let buttonDeletar = document.createElement("button")
+      let deleteText = document.createTextNode("Deletar")
+      buttonDeletar.setAttribute("onclick", `deletarTarefas(${posicao})`)   
+      buttonDeletar.appendChild(deleteText)       
 
-            liElement.appendChild(liText)
-            liElement.appendChild(linkElement)
-            listElement.appendChild(liElement)
-
-            let posicao = tarefas.indexOf(todo)
-
-            linkElement.setAttribute("onclick", `deletarTarefa(${posicao})`)
+      liElement.appendChild(textLi)
+      
+      listElement.appendChild(liElement)
+      liElement.appendChild(buttonDeletar)
 
       })
 
-      
 }
 
-function adicionarTarefa(){
+function adicionarTarefas(){
+      if(inputElement.value === ""){
+            alert("Digite uma tarefa!")
+            return false
+      }else{
+            let newTarefa = inputElement.value
 
-    if(inputElement.value === ""){
+            tarefas.push(newTarefa)
 
-      alert("Digite uma tarefa!")
-      return false
+            inputElement.value = ""
 
-    }else{
+            renderTarefas()
 
-     let novaTarefa = inputElement.value
-     tarefas.push(novaTarefa)
-     inputElement.value = ""
-
-     renderTarefas()
-
-    }
-
-
+            salvarTarefas()
+      }
 }
 
-buttonElement.onclick = adicionarTarefa
-
-function deletarTarefa(posicao){
-      tarefas.splice(posicao, 1)
-      renderTarefas()
-}
+buttonElement.onclick = adicionarTarefas
