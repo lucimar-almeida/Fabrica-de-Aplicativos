@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Desconstruindo array e objetos</title>
+      <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+
+
+      <script>
+
+      let pessoas = {
+            nome: "Lucimar",
+            sobrenome: "Silva",
+            empresa: "Raízen",
+            idade: "35",
+
+      }
+
+      const {nome:nomePessoas, idade, sobrenome, empresa} = pessoas
+
+      console.log(nomePessoas)
+      console.log(idade)
+      console.log(empresa)
+      console.log(sobrenome)
+
+      console.log("====================================================")
+
+      let pessoa = ["Lucimar", "Priscila", "Rafael"]
+
+      const {0:primeira, 2:terceira} = pessoa
+
+      console.log(primeira)
+      console.log(terceira)
+
+      console.log("=============================================")
+
+      let people = ["Lucimar", "Priscila", "Rafael"]
+
+      let [primeiro, segundo] = people
+
+      console.log(primeiro)
+      console.log(segundo)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </script>
+      
+</body>
+</html>
