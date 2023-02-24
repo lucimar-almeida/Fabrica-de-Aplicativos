@@ -8,9 +8,11 @@ let post = []
 function nutriApp(){
 
       fetch("https://sujeitoprogramador.com/rn-api/?api=posts")
-      .then((r) => r.json())
-      .then((json) => {
+      .then((r)=> r.json())
+      .then((json)=>{
+            
             post = json
+            console.log(post)
 
             post.map((item)=>{
 
@@ -22,21 +24,28 @@ function nutriApp(){
                   let titleText = document.createTextNode(item.titulo)
                   titleElement.appendChild(titleText)
                   liElement.appendChild(titleElement)
-                
+                  
                   imgElement.src = item.capa
                   liElement.appendChild(imgElement)
 
                   let descriptionText = document.createTextNode(item.subtitulo)
-                  liElement.appendChild(descriptionText)
+                  descriptionElement.appendChild(descriptionText)
+                  liElement.appendChild(descriptionElement)
+
+
+
 
                   listElement.appendChild(liElement)
 
             })
 
+
       })
+
       .catch(()=>{
-            console.log("Deu algo errado!")
+            console.log("Algo deu errado!")
       })
+
 }
 
 nutriApp()
