@@ -1,23 +1,12 @@
-import React, { useState } from "react";
-import { Text, View, TouchableOpacity, Image, StyleSheet} from "react-native"
+import React from "react";
+import { View, Text, TouchableOpacity, } from "react-native"
 
 function App(){
 
-  const [ img, setImg] = useState(require('./src/biscoito'))
-
   return(
-    <View style={styles.container} >
+    <View>
 
-      <Image
-      src={ img }
-      />
-
-      <TouchableOpacity>
-        <View>
-          <Text></Text>
-        </View>
-
-      </TouchableOpacity>
+      <Text>Ola mundo!</Text>
 
 
 
@@ -28,24 +17,10 @@ function App(){
 
 
     </View>
-
-
+    
   )
 
 
-
 }
-
-const styles = StyleSheet.create({
-
-  container:{
-
-
-
-  }
-
-
-
-})
 
 export default App
