@@ -16,13 +16,14 @@ function App(){
         <Text style={styles.frase}> " Texto do biscoito "</Text>
       </View>
 
-      <TouchableOpacity style={styles.btn}>
+      <TouchableOpacity style={styles.btn} onPress={ ()=> {alert("Quebrou!")}}>
         <View style={styles.btnArea}>
           <Text style={styles.btnFrase}>Quebrar o biscoito!</Text>
         </View>
       </TouchableOpacity>
 
-      <TouchableOpacity style={[styles.btn, { marginTop: 20, borderColor: 'black'}]}>
+      <TouchableOpacity style={[styles.btn, { marginTop: 20, borderColor: 'black'}]}
+        onPress={ ()=> {alert("Iniciou!")}}>
         <View style={[styles.btnArea, {}]}>
           <Text style={[styles.btnFrase, {color: 'black'}]}>Quebrar o biscoito!</Text>
         </View>
