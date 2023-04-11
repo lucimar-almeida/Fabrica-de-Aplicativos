@@ -32,6 +32,10 @@ function App(){
   return(
       <View style = {styles.container}>
 
+        <View style={styles.title}>
+          <Text style={styles.titleText}>Biscoito da Sorte</Text>
+        </View>
+
         <Image source={ img }
         style = {styles.img}
         /> 
@@ -44,9 +48,9 @@ function App(){
           </View>
         </TouchableOpacity>
 
-        <TouchableOpacity style={[styles.btn, {margin: 15, borderColor: '#121212'}]} onPress={reinicioBiscoito}>
+        <TouchableOpacity style={[styles.btn, {margin: 15, borderColor: 'white'}]} onPress={reinicioBiscoito}>
           <View style={styles.btnArea}>
-            <Text style={[styles.btnTexto, {color: '#121212'}]}>Reiniciar biscoito</Text>
+            <Text style={[styles.btnTexto, {color: 'white'}]}>Reiniciar biscoito</Text>
           </View>
         </TouchableOpacity>
 
@@ -62,6 +66,19 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+    backgroundColor: 'black'
+
+  },
+
+  title:{
+    flex: 1,
+    margin: 20,
+    
+  },
+
+  titleText:{
+    color: 'white',
+    fontSize: 40,
 
   },
 
