@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Membro from './components/Membro'
+import Membro from './components/Membro/Membro'
 
 
 class App extends Component{
@@ -7,7 +7,7 @@ class App extends Component{
         return(
 
             <div>
-                <Membro nome="Visitante" sobrenome="Almeida"/>
+                <Membro nome="Visitante"/>
 
             </div>
 

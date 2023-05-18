@@ -5,8 +5,7 @@ class Membro extends Component{
     constructor(props){
         super(props)
         this.state={
-            nome: props.nome,
-            sobrenome: props.sobrenome
+            nome: props.nome
             
         }
 
@@ -24,7 +23,7 @@ class Membro extends Component{
             <div>
 
                 <h2>
-                    Bemvindo(a){this.props.nome}
+                    Bemvindo(a){this.state.nome}
                 </h2>
                 <button onClick={this.entrar}>
                     Entrar como Lucimar
