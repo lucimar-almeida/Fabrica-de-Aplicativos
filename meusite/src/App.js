@@ -1,31 +1,46 @@
-import React from 'react'
+import React, { Component } from 'react'
 
-const Bemvindo = () => {
-    return(
+class App extends Component{
 
-        <div>
-            <h2>Bem-vindo</h2>
-        </div>
-    )
-}
+    constructor(props){
+        super(props)
+        this.state = {
+            nome: "Lucimar",
+            contador: 0
+        }
+        this.aumentar = this.aumentar.bind(this)
+        this.diminuir = this.diminuir.bind(this)
+    }
 
-function App(){
-    return(
+    aumentar(){
+        let state = this.state
+        state.contador += 1
+        this.setState(state)
+    }
 
-        <di>
-            olá mundo
-            <Bemvindo/>
-            <h1>Ola mundo!</h1>
-        </di>
+    diminuir(){
+        let state = this.state
+        if(state.contador === 0){
+            alert("Contador chegou a Zero!")
+            return
+        }
+        
+        state.contador -= 1
+        this.setState(state)
+    }
 
-
-
-
-
-
-
-    )
-
+    render(){
+        return(
+            <div>
+                <h1>Contador</h1>
+                <h3>
+                    <button onClick={this.diminuir}>-</button>
+                        {this.state.contador}
+                    <button onClick={this.aumentar}>+</button>
+                </h3>
+            </div>
+        )
+    }
 }
 
 export default App
