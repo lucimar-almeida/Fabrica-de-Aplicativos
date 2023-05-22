@@ -1,0 +1,21 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
+}
+
+.img{
+    width: 300px;
+    margin-top: 50px;
+    margin-bottom: 25px;
+}
+
+.textoFrase{
+    font-style: italic;
+    color: #dd7b22;
+    font-size: 30px;
+
+}
