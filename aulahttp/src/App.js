@@ -1,9 +1,11 @@
 
+import RoutesApp from "./Routes";
+
 function App() {
   return (
-    <div>
-      
-    </div>
+    
+      <RoutesApp/>
+    
   );
 }
 
