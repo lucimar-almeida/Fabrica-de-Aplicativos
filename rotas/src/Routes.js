@@ -5,14 +5,17 @@ import Home from "./pages/Home"
 import Contato from "./pages/Contato"
 import Sobre from "./pages/Sobre"
 
+import Header from "./components/Header"
+
 
 function RoutesApp(){
     return(
         <BrowserRouter>
+            <Header/>
             <Routes>
                 <Route path="/" element={ <Home/> }/>
-                <Route path="./pages/Contato" element={ <Contato/> }/>
-                <Route path="./pages/Sobre" element={ <Sobre/> }/>
+                <Route path="Contato" element={ <Contato/> }/>
+                <Route path="Sobre" element={ <Sobre/> }/>
             </Routes>
         </BrowserRouter>
     )
