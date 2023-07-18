@@ -8,3 +8,5 @@ const api = axios.create({
 })
 
 export default api
+
+//https://api.themoviedb.org/3/movie/now_playing?api_key=3790253604aa07af218badb6767b5e8e&language=pt-BR

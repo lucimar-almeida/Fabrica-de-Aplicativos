@@ -18,8 +18,8 @@ function Home(){
           page: 1,
         }
       })
-
-      //console.log(response.data.results.slice(0,10))
+      //<img src={`htts://image.tmdb.org/t/p/original/${filme.poster_path}`} alt={filmes.title}/>
+      console.log(response.data.results.slice(0,10))
 
       setFilmes(response.data.results.slice(0,10))
     }
@@ -35,7 +35,7 @@ function Home(){
           return(
             <article key={filme.id}>
               <strong>{filme.title}</strong>
-              <img src={`htts://image.tmdb.org/t/p/original/${filme.poster_path}`} alt={filmes.title}/>
+              <img src={`https://image.tmdb.org/t/p/original/${filme.poster_path}`} width={500} height={500}/> <br/>
             </article>
           )
         })}
